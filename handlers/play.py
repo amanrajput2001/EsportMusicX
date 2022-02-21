@@ -13,6 +13,7 @@ import converter
 from downloaders import youtube
 from config import DURATION_LIMIT
 from helpers.filters import command
+from helpers.command import aditya 
 from helpers.decorators import errors
 from helpers.errors import DurationLimitError
 from helpers.gets import get_url, get_file_name
@@ -88,7 +89,7 @@ async def generate_cover(requested_by, title, views, duration, thumbnail):
 
 
 @Client.on_message(
-    command(["play"])
+    aditya(["play", "#", "@"])
     & filters.group
     & ~filters.edited
     & ~filters.forwarded
