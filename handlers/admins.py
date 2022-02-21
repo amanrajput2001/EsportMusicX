@@ -5,6 +5,7 @@ from pyrogram.types import Message
 from cache.admins import set
 from helpers.decorators import authorized_users_only, errors
 from helpers.channelmusic import get_chat_id
+from helpers.command import aditya
 from helpers.filters import command, other_filters
 from callsmusic import callsmusic, queues
 from pytgcalls.types.input_stream import InputAudioStream
@@ -13,7 +14,7 @@ from pytgcalls.types.input_stream import InputStream
 
 ACTV_CALLS = []
 
-@Client.on_message(command(["pause"]) & other_filters)
+@Client.on_message(aditya(["pause"]) & other_filters)
 @errors
 @authorized_users_only
 async def pause(_, message: Message):
@@ -21,7 +22,7 @@ async def pause(_, message: Message):
     await message.reply_text("▶️ 𝐏𝐚𝐮𝐬𝐞 😔🥀")
 
 
-@Client.on_message(command(["resume"]) & other_filters)
+@Client.on_message(aditya(["resume"]) & other_filters)
 @errors
 @authorized_users_only
 async def resume(_, message: Message):
@@ -29,7 +30,7 @@ async def resume(_, message: Message):
     await message.reply_text("⏸ 𝐑𝐞𝐬𝐮𝐦𝐞 ❤️")
 
 
-@Client.on_message(command(["end"]) & other_filters)
+@Client.on_message(aditya(["end"]) & other_filters)
 @errors
 @authorized_users_only
 async def stop(_, message: Message):
@@ -41,7 +42,7 @@ async def stop(_, message: Message):
     await callsmusic.pytgcalls.leave_group_call(message.chat.id)
     await message.reply_text("❌ 𝐒𝐭𝐨𝐩 🛑 𝐒𝐭𝐫𝐞𝐚𝐦𝐢𝐧𝐠 ✨")
 
-@Client.on_message(command(["skip"]) & other_filters)
+@Client.on_message(aditya(["skip"]) & other_filters)
 @errors
 @authorized_users_only
 async def skip(_, message: Message):
