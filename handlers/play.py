@@ -89,7 +89,7 @@ async def generate_cover(requested_by, title, views, duration, thumbnail):
 
 
 @Client.on_message(
-    aditya(["play", "#", "@"])
+    aditya(["/play", "*play", "play", "#", "@"])
     & filters.group
     & ~filters.edited
     & ~filters.forwarded
