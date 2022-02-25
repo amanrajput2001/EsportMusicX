@@ -99,7 +99,7 @@ async def play(_, message: Message):
     global que
     global useer
 
-    lel = await message.reply("🔎 **𝐅𝐢𝐧𝐝𝐢𝐧𝐠 💫 𝐓𝐡𝐞 𝐒𝐨𝐧𝐠 ❤️  〖 𝐀𝐌𝐀𝐍 𝐑𝐀𝐉𝐏𝐔𝐓 👿 〗...**")
+    lel = await message.reply("🔎 **《 𝐓𝐒𝐆 𝐌𝐔𝐒𝐈𝐂 》..𝐅𝐢𝐧𝐝𝐢𝐧𝐠 💫 𝐓𝐡𝐞 𝐒𝐨𝐧𝐠 ❤️ 𝐌𝐚𝐝𝐞 𝐁𝐲 〖 𝐀𝐌𝐀𝐍 𝐑𝐀𝐉𝐏𝐔𝐓 👿 〗...**")
 
     administrators = await get_administrators(message.chat)
     chid = message.chat.id
